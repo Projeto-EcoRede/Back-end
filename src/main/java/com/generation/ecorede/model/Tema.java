@@ -11,6 +11,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+//imports de relacionamento ainda não utilizados, mas já inseridos.
 
 @Entity //create table
 @Table(name = "tb_temas") 
@@ -28,8 +29,8 @@ public class Tema {
 	        @Size(min = 10, max = 1000, message = "O atributo descrição deve conter no min 10 e no máximo 1000")
 	        private String descricao;
 
-	        @OneToMany(mappedBy = "tema", cascade = CascadeType.REMOVE)
-	        @JsonIgnoreProperties("tema")
+	        //@OneToMany(mappedBy = "tema", cascade = CascadeType.REMOVE)
+	        //@JsonIgnoreProperties("tema")
 	       // private List<Postagem> postagem;
 
 	        public Long getId() {
