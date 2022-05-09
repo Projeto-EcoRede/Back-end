@@ -1,10 +1,13 @@
 package com.generation.ecorede.model;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 public class Tema {
 
 }
 =======
+=======
+>>>>>>> 737bf679c02ff68dce641bf4e9b3d73a47b45948
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -74,4 +77,7 @@ public class Tema {
 }
 	
 
+<<<<<<< HEAD
+>>>>>>> 737bf679c02ff68dce641bf4e9b3d73a47b45948
+=======
 >>>>>>> 737bf679c02ff68dce641bf4e9b3d73a47b45948
