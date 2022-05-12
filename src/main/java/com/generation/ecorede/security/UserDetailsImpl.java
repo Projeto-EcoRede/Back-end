@@ -3,13 +3,12 @@ package com.generation.ecorede.security;
 import java.util.Collection;
 import java.util.List;
 
+import com.generation.ecorede.model.Usuario;
+
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import com.generation.blogpessoal.model.Usuario;
-
 public class UserDetailsImpl implements UserDetails {
-	
 	private static final long serialVersionUID = 1L;
 
 	private String userName;
@@ -21,8 +20,7 @@ public class UserDetailsImpl implements UserDetails {
 		this.password = usuario.getSenha();
 	}
 
-	public UserDetailsImpl() {
-	}
+	public UserDetailsImpl() {	}
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -40,6 +38,7 @@ public class UserDetailsImpl implements UserDetails {
 		return userName;
 	}
 
+	
 	@Override
 	public boolean isAccountNonExpired() {
 		return true;
@@ -50,14 +49,16 @@ public class UserDetailsImpl implements UserDetails {
 		return true;
 	}
 
+	
+	@Override
+	public boolean isCredentialsNonExpired() {
+		return true;
+	}
+
+
 	@Override
 	public boolean isEnabled() {
 		return true;
 	}
-
-	@Override
-	public boolean isCredentialsNonExpired() {
-		// TODO Auto-generated method stub
-		return false;
-	}
 }
+

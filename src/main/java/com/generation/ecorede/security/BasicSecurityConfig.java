@@ -13,7 +13,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 @EnableWebSecurity
-public class BasicSecurityConfig extends WebMvcConfigurerAdapter {
+public class BasicSecurityConfig extends WebSecurityConfigurerAdapter {	
 	
 	@Autowired
 	private UserDetailsService userDetailsService;
