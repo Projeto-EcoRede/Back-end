@@ -1,13 +1,18 @@
 package com.generation.ecorede.model;
 
+import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity //create table
 @Table(name = "tb_usuarios")
@@ -33,9 +38,9 @@ public class Usuario {
 	@Size(min = 5, max = 255, message = "O atributo foto deve conter no min 5  letras e no maximo 255")
 	private String foto;
 	
-	/*@OneToMany(mappedBy = "usuario", cascade = CascadeType.REMOVE)
+	@OneToMany(mappedBy = "usuario", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("usuario")
-	private List<Postagem> postagem;*/
+	private List<Postagem> postagem;
 
 	public Long getId() {
 		return id;
@@ -76,13 +81,13 @@ public class Usuario {
 	public void setFoto(String foto) {
 		this.foto = foto;
 	}
-/*
+
 	public List<Postagem> getPostagem() {
 		return postagem;
 	}
 
 	public void setPostagem(List<Postagem> postagem) {
 		this.postagem = postagem;
-	}*/
+	}
 	
 }
