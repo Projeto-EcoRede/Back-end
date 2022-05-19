@@ -1,6 +1,7 @@
 package com.generation.ecorede.model;
 
 import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,6 +15,8 @@ import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
 @Entity //create table
 @Table(name = "tb_usuarios")
 public class Usuario {
@@ -22,6 +25,7 @@ public class Usuario {
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // auto_increment
 	private Long id;
 	
+	@Schema(example = "email@email.com.br")
 	@Email
 	@NotBlank(message = "O atributo usuario é obrigatório!")
 	@Size(min = 5, max = 255, message = "O atributo usuario deve conter no min 5  letras e no maximo 255")
